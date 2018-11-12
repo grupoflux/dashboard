@@ -8,20 +8,23 @@ app = dash.Dash()
 
 app.layout = html.Div(children=[
     html.H1("Gráficos"), #separando elementos dos childs por virgula
-    dcc.Graph(id="FulanoCerveja",
-            figure = {
-                "data": [{"x": ["cerv1", "cerv2", "cerv3", "cerv4"], "y": [0, 5, 4, 2], "type":"bar", "name": "Cervejas"}
+    dcc.Graph(id="Fulano",
+            figure = { #Consumo Mensal x Nome dos produtos
+                "data": [{"x": ["cerv1", "weissbier", "itaipava", "skol"], "y": [0, 5, 4, 2], "type":"bar", "name": "Cervejas"},
+                         {"x": ["expresso", "cappuccino", "mocaccino", "cafe4"], "y": [0, 0, 2, 1], "type":"line", "name": "Cafés"},
                 ],
                 "layout": {
-                    "title": "Fulano (Cerveja)"
+                    "title": "Fulano"
                 }
             }),
-    dcc.Graph(id="FulanoCafe",
-            figure = {
-                "data": [{"x": ["cafe1", "cafe2", "cafe3", "cafe"], "y": [0, 0, 2, 1], "type":"bar", "name": "Cafés"}
+    
+    dcc.Graph(id="Sicrano",
+            figure = { #Consumo Mensal x Nome dos produtos
+                "data": [{"x": ["pale ale", "weissbier", "itaipava", "skol"], "y": [0, 1, 1, 0], "type":"bar", "name": "Cafés"},
+                         {"x": ["expresso", "cappucino", "mocaccino", "cafe4"], "y": [7, 0, 3, 2], "type":"line", "name": "Cafés"}
                 ],
                 "layout": {
-                    "title": "Fulano (Café)"
+                    "title": "Sicrano"
                 }
             })
     ])
