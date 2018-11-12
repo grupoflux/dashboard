@@ -10,7 +10,7 @@ app.layout = html.Div(children=[
     html.H1("Gráficos"), #separando elementos dos childs por virgula
     dcc.Graph(id="Fulano",
             figure = { #Consumo Mensal x Nome dos produtos
-                "data": [{"x": ["cerv1", "weissbier", "itaipava", "skol"], "y": [0, 5, 4, 2], "type":"bar", "name": "Cervejas"},
+                "data": [{"x": ["pale ale", "weissbier", "itaipava", "skol"], "y": [0, 5, 4, 2], "type":"bar", "name": "Cervejas"},
                          {"x": ["expresso", "cappuccino", "mocaccino", "cafe4"], "y": [0, 0, 2, 1], "type":"line", "name": "Cafés"},
                 ],
                 "layout": {
