@@ -7,7 +7,14 @@ import dash_html_components as html
 app = dash.Dash()
 
 app.layout = html.Div(children=[
-    html.H1("Gráficos"), #separando elementos dos childs por virgula
+    html.H1("Consumo dos clientes"), #separando elementos dos childs por virgula
+    dcc.Dropdown(
+    options=[
+        {'label': 'Fulano', 'value': "Fulano" },  #value = valor de id
+        {'label': 'Sicrano', 'value': "Sicrano"}  #value = valor de id
+    ],
+    value= ''  #id do escolhido
+),
     dcc.Graph(id="Fulano",
             figure = { #Consumo Mensal x Nome dos produtos
                 "data": [{"x": ["pale ale", "weissbier", "itaipava", "skol"], "y": [0, 5, 4, 2], "type":"bar", "name": "Cervejas"},
@@ -20,7 +27,7 @@ app.layout = html.Div(children=[
     
     dcc.Graph(id="Sicrano",
             figure = { #Consumo Mensal x Nome dos produtos
-                "data": [{"x": ["pale ale", "weissbier", "itaipava", "skol"], "y": [0, 1, 1, 0], "type":"bar", "name": "Cafés"},
+                "data": [{"x": ["pale ale", "weissbier", "itaipava", "skol"], "y": [0, 1, 1, 0], "type":"bar", "name": "Cervejas"},
                          {"x": ["expresso", "cappucino", "mocaccino", "cafe4"], "y": [7, 0, 3, 2], "type":"line", "name": "Cafés"}
                 ],
                 "layout": {
