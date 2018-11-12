@@ -8,12 +8,20 @@ app = dash.Dash()
 
 app.layout = html.Div(children=[
     html.H1("Gráficos"), #separando elementos dos childs por virgula
-    dcc.Graph(id="Fulano",
+    dcc.Graph(id="FulanoCerveja",
             figure = {
-                "data": [{"x": ["cerv1", "cerv2", "cerv3", "cerv4"], "y": ["N consumiu", "1 a 2 vezes", "3 a 4 vezes", "5 ou mais"], "type":"bar", "name": "Cervejas"}
+                "data": [{"x": ["cerv1", "cerv2", "cerv3", "cerv4"], "y": [0, 5, 4, 2], "type":"bar", "name": "Cervejas"}
                 ],
                 "layout": {
-                    "title": "Fulano"
+                    "title": "Fulano (Cerveja)"
+                }
+            }),
+    dcc.Graph(id="FulanoCafe",
+            figure = {
+                "data": [{"x": ["cafe1", "cafe2", "cafe3", "cafe"], "y": [0, 0, 2, 1], "type":"bar", "name": "Cafés"}
+                ],
+                "layout": {
+                    "title": "Fulano (Café)"
                 }
             })
     ])
