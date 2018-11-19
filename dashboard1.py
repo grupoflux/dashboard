@@ -5,6 +5,7 @@ import dash_core_components as dcc
 import dash_html_components as html
 
 app = dash.Dash()
+app.css.append_css({'external_url': 'https://codepen.io/amyoshino/pen/jzXypZ.css'})
 
 app.layout = html.Div(children=[
     html.H1("Consumo Jornada do Usuário"),
@@ -16,7 +17,15 @@ app.layout = html.Div(children=[
         "layout":{
             "title":"Tendências de consumo"
         }
-    }),
+    }, className = 'two columns',   
+        style={
+        'height': '30%',
+        'width': '30%',
+        'position': 'relative',
+        'margin-right': '30%'
+                }
+    
+    ),
 
     dcc.Graph(id = "CadastroPlataforma",
     figure = {
@@ -26,7 +35,15 @@ app.layout = html.Div(children=[
         "layout":{
             "title": "Cadastro de usuários"
         }
-    }),
+    }, className = "two columns",
+       style={
+        'height': '10%',
+        'width': '40%',
+        'position': 'relative',
+        'margin-top': '6%'
+                }
+    
+    ),
 
     dcc.Graph(id = "HabitosConsumo",
     figure = {
@@ -36,7 +53,13 @@ app.layout = html.Div(children=[
         "layout":{
             "title":"Hábitos de consumo"
         }
-    }),
+    },    style={
+        'height': '20%',
+        'width': '40%',
+        'position': 'relative',
+        'margin-left': '30%'
+                }
+    ),
 
     html.H1("Experiência dos Clientes"),
 
@@ -47,6 +70,12 @@ app.layout = html.Div(children=[
         "layout":{
             "title": "Visita ao Apolo"
         }
+    },   style={
+        'height': '20%',
+        'width': '40%',
+        'position': 'relative',
+        'margin-left': '30%'
+                
     }),
 
 ])
