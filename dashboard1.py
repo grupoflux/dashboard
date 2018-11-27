@@ -19,10 +19,10 @@ app.layout = html.Div(children=[
         }
     }, className = 'two columns',   
         style={
-        'height': '30%',
-        'width': '30%',
+        'height': '40%',
+        'width': '40%',
         'position': 'relative',
-        'margin-right': '30%'
+        'margin-right': '15%',
                 }
     
     ),
@@ -38,7 +38,7 @@ app.layout = html.Div(children=[
     }, className = "two columns",
        style={
         'height': '10%',
-        'width': '40%',
+        'width': '55%',
         'position': 'relative',
         'margin-top': '6%'
                 }
@@ -57,7 +57,7 @@ app.layout = html.Div(children=[
         'height': '20%',
         'width': '40%',
         'position': 'relative',
-        'margin-left': '30%'
+        'margin-left': '55%'
                 }
     ),
 
@@ -74,9 +74,9 @@ app.layout = html.Div(children=[
         'height': '20%',
         'width': '40%',
         'position': 'relative',
-        'margin-left': '30%'
-                
-    }),
+        'margin-left': '55%'
+                }            
+    ),
 
 ])
 if __name__ == '__main__':
