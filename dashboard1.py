@@ -1,14 +1,35 @@
 #pip install dash dash-renderer dash-html-components dash-core-components plotly
+#pip install dash-table-experiments
+import pandas as pd
 
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
+import dash_table_experiments as dt
+import dash.dependencies
+from dash.dependencies import Input, Output, State
+import plotly
+
+#Importando dados da DataTable
+dadosClientes = 'https://raw.githubusercontent.com/grupoflux/dashboard/master/dadosClientes.csv'
+df_dados = pd.read_csv(dadosClientes)
+print(df_dados.head())
 
 app = dash.Dash()
 app.css.append_css({'external_url': 'https://codepen.io/amyoshino/pen/jzXypZ.css'})
 
 app.layout = html.Div(children=[
     html.H1("Consumo Jornada do Usuário"),
+
+    dt.DataTable(
+        id='my-datatable',
+        rows=df_dados.to_dict('records'),
+        editable=False,
+        row_selectable=False,
+        filterable=True,
+        sortable=True,
+        selected_row_indices=[]
+    ), 
 
     dcc.Graph(id = "TendênciaVendas",
     figure = {
