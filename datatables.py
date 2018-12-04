@@ -11,28 +11,26 @@ import plotly
 
 
 # Load datasets
-US_STATES_URL = 'https://raw.githubusercontent.com/plotly/datasets/master/2014_usa_states.csv'
-US_AG_URL = 'https://raw.githubusercontent.com/plotly/datasets/master/2011_us_ag_exports.csv'
-df_st = pd.read_csv(US_STATES_URL)
-df_ag = pd.read_csv(US_AG_URL)
-print(df_st.head())
-print(df_ag.head())
+dadosClientes = 'https://raw.githubusercontent.com/grupoflux/dashboard/master/dadosClientes.csv'
+df_dados = pd.read_csv(dadosClientes)
+print(df_dados.head())
 
 # Create our app layout
 app = dash.Dash(__name__)
 server = app.server
 app.layout = html.Div([
-    html.H2('My Dash App'),
+    html.H2('Clientes Club Apolo'),
     dt.DataTable(
         id='my-datatable',
-        rows=df_ag.to_dict('records'),
+        rows=df_dados.to_dict('records'),
         editable=False,
-        row_selectable=True,
+        row_selectable=False,
         filterable=True,
         sortable=True,
         selected_row_indices=[]
     )], 
-    style={'width': '75%',
+    style={'width': '40%',
+            'height': '40%',
             'margin-left': '10%',
             'margin-right': '10%'})
 
